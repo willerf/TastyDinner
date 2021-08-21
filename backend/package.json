@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@google-cloud/vision": "^2.3.8",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "morgan": "^1.10.0"
+  }
+}

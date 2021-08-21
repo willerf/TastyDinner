@@ -4,8 +4,6 @@ import { Link } from 'react';
 
 function Home() {
 
-  
-
   return(
       <div>
         <div>
