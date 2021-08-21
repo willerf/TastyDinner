@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/firstFragment"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"/>
+    <item
+        android:id="@+id/secondFragment"
+        android:title="Food Inspo"
+        android:icon="@drawable/ic_baseline_fastfood_24"/>
+    <item
+        android:id="@+id/thirdFragment"
+        android:title="Camera"
+        android:icon="@drawable/ic_baseline_linked_camera_24"/>
+</menu>
