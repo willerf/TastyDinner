@@ -62,7 +62,7 @@ app.post('/file-upload', (req, res) => {
 
         console.log(fileName)
 
-        file.mv('./resources/' + fileName, (err) => {
+        file.mv('./resources/' + fileName, async (err) => {
             if (err)
             {
                 console.log(err)
@@ -72,12 +72,18 @@ app.post('/file-upload', (req, res) => {
             {
                 console.log("file uploaded")
                 
-                /*quickstart(fileName).then(data => {
-                    console.log("after quick start:")
-                    console.log(data.description);
-                })
-*/
+                let writtenText = await textDetect(fileName)
 
+                console.log(writtenText)
+                let token = 'cd40c85971e24d75b5c63fb6d3299882';
+
+                let awaitData = await recipeAPI.getRecipe(token, writtenText)
+
+                let recipes = JSON.parse(awaitData)
+
+                console.log(recipes)
+
+                /*
                 textDetect(fileName).then(async data => {
                     console.log("after labelDetect:")
                     console.log(data);
@@ -88,11 +94,11 @@ app.post('/file-upload', (req, res) => {
                     let recipes = JSON.parse(awaitData)
 
                     console.log(recipes)
-                   
+                })*/
 
-                })
+                let completeData = {ingredients: writtenText, recipeList: recipes}
 
-                res.send("Success!")
+                res.send(completeData)
             }
         })
     }

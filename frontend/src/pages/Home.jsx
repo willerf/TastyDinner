@@ -22,8 +22,8 @@ export default class Home extends Component {
     )
 
     axios.post('http://localhost:3001/file-upload', data).then(data => {
-      console.log(data);
-
+      let usefulData = data.data
+      console.log(usefulData)
     })
   }
 
