@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+
 .navbarHeader {
   width: 100%;
   display: flex;
@@ -5,4 +7,9 @@
   justify-content: space-between;
   align-items: center;
   padding-left: 1%;
+}
+
+.titleName {
+  font-family: "Berkshire Swash", cursive;
+  color: black;
 }

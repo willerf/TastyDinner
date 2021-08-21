@@ -6,8 +6,8 @@ import Navbar from "./components/Navbar"
 
 import Home from "./pages/Home";
 import Recommendations from "./pages/Recommendations";
-import UploadIngredients from "./pages/UploadIngredients";
-import ViewIngredients from "./pages/ViewIngredients";
+import Ingredients from "./pages/Ingredients";
+import SavedRecipes from "./pages/SavedRecipes";
 
 import "antd/dist/antd.css"
 
@@ -20,8 +20,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/recommendations" component={Recommendations} />
-          <Route exact path="/view/ingredients" component={ViewIngredients} />
-          <Route exact path="/upload/ingredients" component={UploadIngredients} />
+          <Route exact path="/ingredients" component={Ingredients} />
+          <Route exact path="/saved/recipes" component={SavedRecipes} />
         </Switch>
       </BrowserRouter>
     </div>

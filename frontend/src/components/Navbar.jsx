@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom'
 import { Menu } from 'antd'
 import navbarStyles from '../styles/navbar.module.css'
 
-const { SubMenu } = Menu;
-
-
 function Navbar() {
 
   const [curPage, setCurPage] = useState ("home");
@@ -18,7 +15,7 @@ function Navbar() {
   return (
     <div className={navbarStyles.navbarHeader}>
       <div onClick={handleClick}>
-        <Link to="/">Instant Meal</Link>
+        <Link to="/" className={navbarStyles.titleName}>TastyFood</Link>
       </div>
       <div>
         <Menu mode="horizontal" onClick={handleClick} selectedKeys={[curPage]}>
@@ -31,12 +28,12 @@ function Navbar() {
             <Link to="/recommendations">Recommendations</Link>
           </Menu.Item>
 
-          <Menu.Item key="uploadIngredients">
-            <Link to="/upload/ingredients">Upload Ingredients</Link>
+          <Menu.Item key="ingredients">
+            <Link to="/ingredients">Ingredients</Link>
           </Menu.Item>
 
-          <Menu.Item key="viewIngredients">
-            <Link to="/view/ingredients">View Ingredients</Link>
+          <Menu.Item key="savedRecipes">
+            <Link to="/saved/recipes">Saved Recipes</Link>
           </Menu.Item>
         
         </Menu>
