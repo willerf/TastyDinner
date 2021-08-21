@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Staatliches", cursive;
+  color: white;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+  position: relative;
+}
+body {
+  background: orange;
+}
+.tastyfood {
+  font-family: "Berkshire Swash", cursive;
+}
