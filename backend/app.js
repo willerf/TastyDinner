@@ -3,6 +3,15 @@ const cors = require("cors");
 const logger = require("morgan");
 const upload = require('express-fileupload')
 
+const recipeAPI = require('./api/recipe')
+
+// google cloud stuff
+
+// Imports the Google Cloud client library
+const vision = require('@google-cloud/vision');
+  // Creates a client
+const client = new vision.ImageAnnotatorClient();
+
 
 const port = process.env.PORT || 3001;
 
@@ -15,6 +24,28 @@ app.use(logger('dev'));
 app.listen(port, function() {
     console.log("Runnning on " + port);
   });
+
+async function textDetect(fileName) {
+    
+    // Performs label detection on the image file
+    const [result] = await client.textDetection(`./resources/${fileName}`);
+    const labels = result.textAnnotations;
+    console.log('Text:');
+    let descriptionArr = [];
+    let removeFirst = false;
+
+    labels.forEach(label => {
+        if (removeFirst == false)
+        {
+            console.log("haha")
+            removeFirst = true;
+        }
+        else
+            descriptionArr.push(label.description)
+    });
+
+    return descriptionArr;
+}
 
 app.use(upload())
 
@@ -31,7 +62,7 @@ app.post('/file-upload', (req, res) => {
 
         console.log(fileName)
 
-        file.mv('./' + fileName, (err) => {
+        file.mv('./resources/' + fileName, (err) => {
             if (err)
             {
                 console.log(err)
@@ -40,7 +71,28 @@ app.post('/file-upload', (req, res) => {
             else
             {
                 console.log("file uploaded")
-                res.send("file Uploaded")
+                
+                /*quickstart(fileName).then(data => {
+                    console.log("after quick start:")
+                    console.log(data.description);
+                })
+*/
+
+                textDetect(fileName).then(async data => {
+                    console.log("after labelDetect:")
+                    console.log(data);
+                    let token = 'cd40c85971e24d75b5c63fb6d3299882';
+
+                    let awaitData = await recipeAPI.getRecipe(token, data)
+                    
+                    let recipes = JSON.parse(awaitData)
+
+                    console.log(recipes)
+                   
+
+                })
+
+                res.send("Success!")
             }
         })
     }
