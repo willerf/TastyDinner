@@ -7,12 +7,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  color: white;
 }
 .container {
   height: 100vh;
   width: 100%;
-  background-image: url("../img/TastyDinner.png");
+  background-image: url("../img/TastyDinner1.png");
   background-position: center;
   background-size: cover;
   padding-left: 5%;
@@ -23,16 +22,34 @@
 }
 body {
   background: orange;
-
-  margin: 100px;
   background-size: cover;
 }
-.tastyfood {
-  align-items: center;
-  font-family: "Berkshire Swash", cursive;
-}
 .image {
-  justify-content: center;
   width: 500px;
-  border-radius: 100px;
+  height: 500px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 70%;
+}
+h1 {
+  position: relative;
+  left: 300px;
+  top: 200px;
+  font-size: 50px;
+  font-display: center;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 50px 0 50px;
+}
+.upload {
+  position: relative;
+  left: 800px;
+  top: 200px;
+  font-size: 20px;
+}
+p {
+  position: relative;
+  left: 800px;
+  top: 200px;
+  font-size: 20px;
 }

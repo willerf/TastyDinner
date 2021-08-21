@@ -35,6 +35,10 @@ function Navbar() {
           <Menu.Item key="savedRecipes">
             <Link to="/saved/recipes">Saved Recipes</Link>
           </Menu.Item>
+
+          <Menu.Item key="login">
+            <Link to="/login">Login</Link>
+          </Menu.Item>
         
         </Menu>
       </div>

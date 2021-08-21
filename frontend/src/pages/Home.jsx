@@ -7,7 +7,6 @@ function Home() {
   return(
       <div>
         <div>
-
           <html>
 
             <head>
@@ -18,18 +17,14 @@ function Home() {
             <body>
 
                 <div className={homeStyles.container}>
-                <h1 className={homeStyles.tastyfood}>TastyFood</h1>
                 <h1 className={homeStyles.purpose}>WE HELP DELIVER HEALTHY DINNER</h1>
-                <p>Upload Ingredients</p>
-                <p>Type your ingredients or take a shot of your goodies, we'll recommend the best recipe for you.</p>
-                <img src = "https://www.jocooks.com/wp-content/uploads/2013/07/summer-fruit-salad-with-lemon-dressing-500x375.jpg" className={homeStyles.image}/>
+                <p className={homeStyles.upload}>Upload Ingredients</p>
+                <p >Type your ingredients or take a shot of your goodies, <br></br>we'll recommend the best recipe for you.</p>
                 </div>
               
             </body>
 
           </html>
-        
-        
 
         </div>
       </div>

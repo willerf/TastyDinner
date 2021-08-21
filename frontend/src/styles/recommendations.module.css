@@ -1,0 +1,37 @@
+.backgroundImage {
+  background-image: url("../img/RecommendationsBackground.jpg");
+  width: 100%;
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.titleBox {
+  background-color: white;
+  padding: 1%;
+
+  width: 70%;
+  height: 12vh;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 1);
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-size: 30px;
+  color: black;
+}
+
+.description {
+  font-size: 20px;
+  color: black;
+}

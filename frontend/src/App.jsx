@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Recommendations from "./pages/Recommendations";
 import Ingredients from "./pages/Ingredients";
 import SavedRecipes from "./pages/SavedRecipes";
+import Login from "./pages/Login"
 
 import "antd/dist/antd.css"
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/recommendations" component={Recommendations} />
           <Route exact path="/ingredients" component={Ingredients} />
           <Route exact path="/saved/recipes" component={SavedRecipes} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </BrowserRouter>
     </div>
