@@ -63,3 +63,8 @@ app.use('/getAllRecipes', getAllRecipes)
 
 // GET list of food photos with flickr API
 app.use('/getPhotos', getPhotos)
+
+// deletes all documents in Ingredients collection
+app.get('/deleteDB', (req, res) => {
+  Ingredient.deleteMany({}).then(data => console.log("successfully deleted"))
+})

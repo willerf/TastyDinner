@@ -4,7 +4,7 @@ let flickrAPI = require("../api/flickr")
 let router = express.Router();
 
 router.get('/', async (req, res) => {
-    flickrAPI.getPhotosIDs("americanfood,japanesefood,italianfood,koreanbbq,sushi,ramen,mexicanfood,koreanfood,vietnamesefood", 500).then(data =>{
+    flickrAPI.getPhotosIDs("koreanfood,japanesefood,homemadefood,americanfood,cuisine", 300).then(data =>{
         
         let parsedJSON = JSON.parse(data)
         

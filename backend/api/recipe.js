@@ -1,8 +1,10 @@
+require('dotenv').config()
 const https = require ('https');
 
 let getRecipe = function getRecipe(givenIngred)
 {
-    let token = 'cd40c85971e24d75b5c63fb6d3299882';
+    let token = process.env.CLIENT_SECRET
+    console.log(token)
 
     ingredients = givenIngred.toString()
 
@@ -11,7 +13,7 @@ let getRecipe = function getRecipe(givenIngred)
 
         const req = https.request({
             host: 'api.spoonacular.com',
-            path: `/recipes/findByIngredients?apiKey=${token}&ingredients=${ingredients}&number=5`,
+            path: `/recipes/findByIngredients?apiKey=${token}&ingredients=${ingredients}&number=12`,
             method: 'GET',
             headers: {
                 'Content-Type' : 'application/json'
