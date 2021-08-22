@@ -3,103 +3,55 @@ const cors = require("cors");
 const logger = require("morgan");
 const upload = require('express-fileupload')
 
-const recipeAPI = require('./api/recipe')
+const mongoose = require("mongoose")
+const Ingredient = require("./models/ingredient")
 
-// google cloud stuff
 
-// Imports the Google Cloud client library
-const vision = require('@google-cloud/vision');
-  // Creates a client
-const client = new vision.ImageAnnotatorClient();
+const fileUpload = require('./routes/fileUpload')
+const getIngredients = require('./routes/getIngredients')
+const getAllRecipes = require('./routes/getAllRecipes')
+const typedUpload = require('./routes/typedUpload')
 
 
 const port = process.env.PORT || 3001;
 
 const app = express()
 
+// connect to mongoDB
+let dbURI = "mongodb+srv://tastyDinner:tastydinner34@cluster0.f6yuh.mongodb.net/ingredients-info?retryWrites=true&w=majority"
+
+// to fix the mongoose error stuff idk lol
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+mongoose.connect(dbURI).then(result => {
+    console.log("connected to db")
+    
+    app.listen(port, function() {
+        console.log("Runnning on " + port);
+      });
+})
+.catch(err => console.log(err))
+
 app.use(cors());
 app.use(logger('dev'));
 
-
-app.listen(port, function() {
-    console.log("Runnning on " + port);
-  });
-
-async function textDetect(fileName) {
-    
-    // Performs label detection on the image file
-    const [result] = await client.textDetection(`./resources/${fileName}`);
-    const labels = result.textAnnotations;
-    console.log('Text:');
-    let descriptionArr = [];
-    let removeFirst = false;
-
-    labels.forEach(label => {
-        if (removeFirst == false)
-        {
-            console.log("haha")
-            removeFirst = true;
-        }
-        else
-            descriptionArr.push(label.description)
-    });
-
-    return descriptionArr;
-}
+app.use(express.json());
 
 app.use(upload())
 
+// POST to file-upload
+// saves file, does google vision, calls recipe api, saves to db, sends recipes to client
+app.use('/file-upload', fileUpload)
 
-app.post('/file-upload', (req, res) => {
-    if (req.files) {
-        console.log(req.files)
+// POST to typed-upload
+// uses sent typed list to call recipe API, saves to db, sends recipe to client
+app.use('/typed-upload', typedUpload)
 
-        console.log(req.files.test)
-        
-        let file = req.files.test
+// GET getting databse of ingredients
+app.use('/getIngredients', getIngredients)
 
-        let fileName = file.name
-
-        console.log(fileName)
-
-        file.mv('./resources/' + fileName, async (err) => {
-            if (err)
-            {
-                console.log(err)
-                res.send(err)
-            }
-            else
-            {
-                console.log("file uploaded")
-                
-                let writtenText = await textDetect(fileName)
-
-                console.log(writtenText)
-                let token = 'cd40c85971e24d75b5c63fb6d3299882';
-
-                let awaitData = await recipeAPI.getRecipe(token, writtenText)
-
-                let recipes = JSON.parse(awaitData)
-
-                console.log(recipes)
-
-                /*
-                textDetect(fileName).then(async data => {
-                    console.log("after labelDetect:")
-                    console.log(data);
-                    let token = 'cd40c85971e24d75b5c63fb6d3299882';
-
-                    let awaitData = await recipeAPI.getRecipe(token, data)
-                    
-                    let recipes = JSON.parse(awaitData)
-
-                    console.log(recipes)
-                })*/
-
-                let completeData = {ingredients: writtenText, recipeList: recipes}
-
-                res.send(completeData)
-            }
-        })
-    }
-})
+// GET recipes with all ingredients combined
+app.use('/getAllRecipes', getAllRecipes)
