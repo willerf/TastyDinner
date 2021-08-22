@@ -22,7 +22,7 @@ const port = process.env.PORT || 3001;
 const app = express()
 
 // connect to mongoDB
-let dbURI = "mongodb+srv://tastyDinner:tastydinner34@cluster0.f6yuh.mongodb.net/ingredients-info?retryWrites=true&w=majority"
+let dbURI = `mongodb+srv://tastyDinner:${process.env.DATABASE_SECRET}@cluster0.f6yuh.mongodb.net/ingredients-info?retryWrites=true&w=majority`
 
 // to fix the mongoose error stuff idk lol
 mongoose.set('useNewUrlParser', true);
