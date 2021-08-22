@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const cors = require("cors");
 const logger = require("morgan");
@@ -11,6 +13,8 @@ const fileUpload = require('./routes/fileUpload')
 const getIngredients = require('./routes/getIngredients')
 const getAllRecipes = require('./routes/getAllRecipes')
 const typedUpload = require('./routes/typedUpload')
+const getPhotos = require('./routes/getPhotos')
+
 
 
 const port = process.env.PORT || 3001;
@@ -42,6 +46,7 @@ app.use(express.json());
 
 app.use(upload())
 
+
 // POST to file-upload
 // saves file, does google vision, calls recipe api, saves to db, sends recipes to client
 app.use('/file-upload', fileUpload)
@@ -55,3 +60,6 @@ app.use('/getIngredients', getIngredients)
 
 // GET recipes with all ingredients combined
 app.use('/getAllRecipes', getAllRecipes)
+
+// GET list of food photos with flickr API
+app.use('/getPhotos', getPhotos)
