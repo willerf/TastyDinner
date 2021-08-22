@@ -8,49 +8,34 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .container {
-  height: 100vh;
+  height: 95.5vh;
   width: 100%;
-  background-image: url("../img/anotherfood.jpg");
-  background-position: center;
+  background-image: url("../img/HomePage2.jpg");
+  background-position: 0% 44%;
   background-size: cover;
-  padding-left: 5%;
-  padding-right: 5%;
-  background-color: orange;
   box-sizing: border-box;
   position: relative;
   opacity: 0.5;
 }
 
-body {
-  background-size: cover;
-}
-.image {
-  width: 500px;
-  height: 500px;
-  display: flex;
-  align-items: flex-end;
-  border-radius: 70%;
-}
 .purpose {
   position: absolute;
-  left: 300px;
-  top: 200px;
+  left: 100px;
+  top: 80px;
   font-size: 50px;
   font-display: center;
   letter-spacing: 2px;
   text-align: center;
   padding: 50px 0 50px;
+  text-shadow: white 0px 0px 20px;
 }
-.upload {
-  position: relative;
-  left: 800px;
-  top: 200px;
+
+.slogan {
+  position: absolute;
+  left: 100px;
+  top: 250px;
   font-size: 20px;
-}
-p {
-  position: relative;
-  left: 800px;
-  top: 200px;
-  font-size: 20px;
+  text-shadow: white 0px 0px 20px;
 }

@@ -6,11 +6,14 @@ import { Button, Select } from "antd";
 import ingredientsStyles from "../styles/ingredients.module.css"
 
 import CurrentIngredients from "../components/CurrentIngredients"
+import RecentLists from "../components/RecentLists"
+import ViewRecipes from "../components/ViewRecipes"
 
 function Ingredients() {
 
   
   let ingredientData = [""];
+  let recipeData = [""];
   let newIngredientData = {ingredients: []};
   const [selectedFile, setSelectedFile] = useState();
 
@@ -35,6 +38,7 @@ function Ingredients() {
     )
 
     axios.post('http://localhost:3001/file-upload', data).then(data => {
+      window.location.reload();
       console.log(data);
     })
   }
@@ -46,6 +50,7 @@ function Ingredients() {
 
   function sendData() {
     axios.post('http://localhost:3001/typed-upload', newIngredientData).then(data => {
+      window.location.reload();
       console.log(data);
     })
   }
@@ -74,11 +79,14 @@ function Ingredients() {
           </div>
         </div>
         <div className={ingredientsStyles.tagIngredients}>
-            <CurrentIngredients></CurrentIngredients>
+          <CurrentIngredients></CurrentIngredients>
+        </div>
+        <div className={ingredientsStyles.tagLists}>
+          <RecentLists></RecentLists>
         </div>
       </div>
       <div className={ingredientsStyles.bottomBackground}>
-
+        <ViewRecipes></ViewRecipes>
       </div>
     </div>
   )

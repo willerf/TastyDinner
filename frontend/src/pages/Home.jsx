@@ -6,29 +6,20 @@ function Home() {
 
   return(
       <div>
-        <div>
-          <html>
 
-            <head>
-                <title>Tasty Food</title>
-                <link href='./App.css' rel='stylesheet'></link>
-            </head>
+          <head>
+              <title>Tasty Food</title>
+              <link href='./App.css' rel='stylesheet'></link>
+          </head>
 
-            <body>
+          <body>
 
-                <div className={homeStyles.container}></div>
-                <div className={homeStyles.titleBox}>
-                <div className={homeStyles.purpose}>WE HELP DELIVER HEALTHY DINNER</div>
-                <p >Type your ingredients or take a shot of your goodies, <br></br>we'll recommend the best recipe for you.</p>
-                </div>
-                
-                
-              
-            </body>
+              <div className={homeStyles.container}></div>
+              <div className={homeStyles.purpose}>WE HELP FIND #TASTYDINNER</div>
+              <div className={homeStyles.slogan}>Type your ingredients or take a shot of your goodies, <br/>we'll recommend the best recipe for you. <br/><br/>Or browse our inspiration page to <br/>fill your cravings.</div>
 
-          </html>
+          </body>
 
-        </div>
       </div>
     )
 }

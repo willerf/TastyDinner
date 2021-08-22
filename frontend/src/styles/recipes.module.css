@@ -1,0 +1,38 @@
+.sectionTitle {
+  font-size: 50px;
+}
+
+.foodSection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.foodModule {
+  background-color: rgb(234, 227, 219);
+  padding: 2%;
+  border-radius: 40px;
+  margin: 2%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.foodTitle {
+  height: 4vh;
+  width: 300px;
+}
+
+.foodImage {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.ingredientList {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 300px;
+}
+
+.ingredientColumn {
+  padding: 20px;
+}

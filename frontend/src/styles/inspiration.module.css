@@ -1,0 +1,10 @@
+.imageSection {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.oneImage {
+  margin: 20px;
+}

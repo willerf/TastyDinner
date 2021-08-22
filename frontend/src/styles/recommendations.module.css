@@ -44,17 +44,17 @@
   font-size: 30px;
   color: black;
   position: relative;
-  left: 1000px;
+  left: 700px;
   padding: 10%;
 }
 .yummy {
   font-size: 50px;
-  position: absolute;
+  position: relative;
   top: 220%;
   padding: -50%;
 }
 .image {
-  width: 150%;
+  width: 135%;
   transition: 0.2s ease ease-in-out;
 
   transform: translate(50%, 170%);

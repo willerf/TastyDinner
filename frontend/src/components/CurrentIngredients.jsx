@@ -5,24 +5,26 @@ import { Tag } from 'antd';
 
 function IngredientInfo(props) {
 
-  function removeIngredient(event) {
-    console.log(event);
+  function removeIngredient(e) {
+    console.log(e);
   }
 
   return(
     <div>
       <div>
-        Your Current Ingredients
-      </div>
-      {props.data.map((tempIngredientsList, index) =>
-      <>
-        {tempIngredientsList.ingredients.map((tempIngredient, anotherIn) =>
-          <Tag closable onClose={removeIngredient} style={{margin: "3px"}}>
-            {tempIngredient}
-          </Tag>
+        <div>
+          Your Current Ingredients
+        </div>
+        {props.data.map((tempIngredientsList, index) =>
+        <>
+          {tempIngredientsList.ingredients.map((tempIngredient, anotherIn) =>
+            <Tag closable onClose={removeIngredient} style={{margin: "3px"}}>
+              {tempIngredient}
+            </Tag>
+          )}
+          </>
         )}
-        </>
-      )}
+      </div>
     </div>
   )
 }

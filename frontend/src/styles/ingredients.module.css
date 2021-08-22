@@ -37,9 +37,9 @@
 }
 
 .bottomHalf {
-  background-color: lightsalmon;
+  background-color: rgb(234, 227, 219);
   width: 100%;
-  height: 55vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
   padding: 2%;
@@ -57,7 +57,7 @@
   width: 50%;
   padding: 3%;
   border-radius: 20px;
-  background-color: rgb(171, 215, 82);
+  background-color: rgb(184, 156, 124);
   margin-right: 5%;
   box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
 }
@@ -65,17 +65,18 @@
 .uploadIngredients {
   padding: 3%;
   border-radius: 20px;
-  background-color: rgb(171, 215, 82);
+  background-color: rgb(184, 156, 124);
   box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .bottomBackground {
-  background-color: rgb(171, 215, 82);
-  height: 15vh;
+  background-color: rgb(250, 248, 244);
+  height: 100vh;
+  padding: 2%;
 }
 
 .tagIngredients {
-  background-color: rgb(171, 215, 82);
+  background-color: rgb(184, 156, 124);
   padding: 1%;
 
   width: 70%;
@@ -86,6 +87,15 @@
   margin: 0;
   position: absolute;
   top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.tagLists {
+  margin: 0;
+  position: absolute;
+  top: 85%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

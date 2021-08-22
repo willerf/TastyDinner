@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <div className={navbarStyles.navbarHeader}>
       <div onClick={handleClick}>
-        <Link to="/" className={navbarStyles.titleName}>TastyFood</Link>
+        <Link to="/" className={navbarStyles.titleName}>TastyDinner</Link>
       </div>
       <div>
         <Menu mode="horizontal" onClick={handleClick} selectedKeys={[curPage]}>
@@ -25,7 +25,7 @@ function Navbar() {
           </Menu.Item>
 
           <Menu.Item key="recommendations">
-            <Link to="/recommendations">Recommendations</Link>
+            <Link to="/recommendations">Inspiration</Link>
           </Menu.Item>
 
           <Menu.Item key="ingredients">
