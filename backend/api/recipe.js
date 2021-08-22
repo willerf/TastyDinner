@@ -1,7 +1,8 @@
 const https = require ('https');
 
-let getRecipe = function getRecipe(token, givenIngred)
+let getRecipe = function getRecipe(givenIngred)
 {
+    let token = 'cd40c85971e24d75b5c63fb6d3299882';
 
     ingredients = givenIngred.toString()
 
@@ -10,7 +11,7 @@ let getRecipe = function getRecipe(token, givenIngred)
 
         const req = https.request({
             host: 'api.spoonacular.com',
-            path: `/recipes/findByIngredients?apiKey=${token}&ingredients=${ingredients}&number=3`,
+            path: `/recipes/findByIngredients?apiKey=${token}&ingredients=${ingredients}&number=5`,
             method: 'GET',
             headers: {
                 'Content-Type' : 'application/json'
@@ -18,7 +19,7 @@ let getRecipe = function getRecipe(token, givenIngred)
         }, (res) => {
 
             console.log('statusCode: ' + res.statusCode)
-
+            console.log('url:' + req.path)
             res.on("data", d => {
                 
                 body += d;
