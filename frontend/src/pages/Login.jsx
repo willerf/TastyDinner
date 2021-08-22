@@ -1,7 +1,9 @@
 import React from 'react'
+import loginStyles from "../styles/login.module.css"
+
 function Login() {
     return (
-      <div>Login</div>
+      <div className={loginStyles.Title}>Login</div>
     )
   }
   

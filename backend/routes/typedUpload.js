@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     if (req.body)
     {   
 
-        data = req.body.ingredients;
+        let data = req.body;
         
         console.log("typedUpload data: " + data);
 
