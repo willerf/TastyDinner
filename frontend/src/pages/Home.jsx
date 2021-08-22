@@ -16,11 +16,13 @@ function Home() {
 
             <body>
 
-                <div className={homeStyles.container}>
-                <h1 className={homeStyles.purpose}>WE HELP DELIVER HEALTHY DINNER</h1>
-                <p className={homeStyles.upload}>Upload Ingredients</p>
+                <div className={homeStyles.container}></div>
+                <div className={homeStyles.titleBox}>
+                <div className={homeStyles.purpose}>WE HELP DELIVER HEALTHY DINNER</div>
                 <p >Type your ingredients or take a shot of your goodies, <br></br>we'll recommend the best recipe for you.</p>
                 </div>
+                
+                
               
             </body>
 
