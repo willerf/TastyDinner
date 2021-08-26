@@ -1,6 +1,16 @@
 # TastyDinner
 At home without any idea of what to eat or do you have some ingredients but not sure of what recipes you could prepare? TastyDinner has it all for you. Check out our webpage for inspiration and love!
 
+![home](https://user-images.githubusercontent.com/77251579/131032525-54c3fbc0-a600-4b01-8bf2-18fecbca6415.jpg)
+![gallery](https://user-images.githubusercontent.com/77251579/131032579-5791f46d-75a0-4e88-9581-5e6cd26372d9.jpg)
+![ingredients](https://user-images.githubusercontent.com/77251579/131032618-434a6aee-e023-4d75-9e40-220fe41eb6f8.jpg)
+
+Winner of Hack The 6ix 2021's main sponsor, Bank of Montreal, challenge
+
+Devpost:
+https://devpost.com/software/tastyfood
+Demo Video:
+https://www.youtube.com/watch?v=gd11Y4tCjiY
 
 ## Inspiration
 > Our team is full of food lovers and what’s a better way to show this passion than to design and develop a website related to it! We were inspired by the Hack The 6ix sponsor BMO, who proposed the challenge of answering “What to eat for dinner?”. We realized that this is probably the most asked question during the pandemic, since we can’t go out normally, and search our fridges every 15 minutes at home for something to eat. Hence, we wondered how people could prepare themselves a meal with just 5 ingredients found in the fridge? Don’t worry, TastyDinner is here for you!
@@ -31,6 +41,3 @@ At home without any idea of what to eat or do you have some ingredients but not 
 ## What's next for TastyDinner
 > Stay tuned, stay hungry, cause you are going to get a #TastyDinner. 
 **TastyLunch coming soon!** 
-
-Demo Video:
-https://www.youtube.com/watch?v=gd11Y4tCjiY
